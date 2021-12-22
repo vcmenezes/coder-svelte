@@ -1,11 +1,36 @@
 <script lang="ts">
     import Botao from "./Botao.svelte";
+    import Linha from "./Linha.svelte";
 </script>
 
 <div class="calculadora">
-    <Botao texto="7" />
-    <Botao texto="8" />
-    <Botao texto="9" />
+    <Linha>
+        <Botao texto="AC" triplo />
+        <Botao texto="/" />
+    </Linha>
+    <Linha>
+        <Botao texto="7" />
+        <Botao texto="8" />
+        <Botao texto="9" />
+        <Botao texto="*" />
+    </Linha>
+    <Linha>
+        <Botao texto="4" />
+        <Botao texto="5" />
+        <Botao texto="6" />
+        <Botao texto="+" />
+    </Linha>
+    <Linha>
+        <Botao texto="1" />
+        <Botao texto="2" />
+        <Botao texto="3" />
+        <Botao texto="-" />
+    </Linha>
+    <Linha>
+        <Botao texto="0" duplo />
+        <Botao texto="," />
+        <Botao texto="=" />
+    </Linha>
 </div>
 
 <style>
