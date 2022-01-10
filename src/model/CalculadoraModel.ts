@@ -23,6 +23,15 @@ export default class CalculadoraModel {
             this.#acumulador,
             this.#operacao,
             NAO_LIMPAR_TELA
-        )
+        );
+    }
+
+    pontoDigitado() {
+        return new CalculadoraModel(
+            this.#valor?.includes('.') ? this.#valor : this.#valor + '.',
+            this.#acumulador,
+            this.#operacao,
+            NAO_LIMPAR_TELA
+        );
     }
 }
