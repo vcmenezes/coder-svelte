@@ -1,4 +1,5 @@
 const NAO_LIMPAR_TELA = false;
+const LIMPAR_TELA = true;
 
 export default class CalculadoraModel {
     #valor: string;
@@ -33,5 +34,27 @@ export default class CalculadoraModel {
             this.#operacao,
             NAO_LIMPAR_TELA
         );
+    }
+
+    limpar() {
+        return new CalculadoraModel();
+    }
+
+    operacaoDigitada(proximaOperacao: string) {
+        return this.calcular(proximaOperacao);
+    }
+
+    calcular(proximaOperacao: string = null) {
+        const acumulador = !this.#operacao
+            ? parseFloat(this.#valor)
+            : eval(`${this.#acumulador} ${this.#operacao} ${this.#valor}`);
+        const valor = !this.#operacao ? this.#valor : `${acumulador}`;
+
+        return new CalculadoraModel(
+            valor,
+            acumulador,
+            proximaOperacao,
+            proximaOperacao ? LIMPAR_TELA : NAO_LIMPAR_TELA
+        )
     }
 }
